@@ -44,6 +44,7 @@ def predict_disease(symptom_data: SymptomsInput):
     UPDATED: Receives a list of symptoms and returns a list of prediction objects
     with disease names and confidence scores, matching the React frontend's needs.
     """
+    
     prediction_list = model.predict(symptom_data.symptoms)
     # The key here is returning a dictionary with the "predictions" key
     return {"predictions": prediction_list}

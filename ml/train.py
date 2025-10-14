@@ -55,26 +55,26 @@ def train_model():
         
         model = RandomForestClassifier(n_estimators=100, random_state=42)
         model.fit(X_train, y_train_encoded)
-        print("    🎉 Model training complete.")
+        print("    Model training complete.")
 
         # --- 4. Evaluate Model ---
         print("\n--> Step 4: Evaluating model...")
         # Calculate training accuracy
         train_pred = model.predict(X_train)
         train_accuracy = accuracy_score(y_train_encoded, train_pred)
-        print(f"    📚 Accuracy on training data: {train_accuracy * 100:.2f}%")
+        print(f"    Accuracy on training data: {train_accuracy * 100:.2f}%")
 
         # Calculate testing accuracy
         test_pred = model.predict(X_test)
         test_accuracy = accuracy_score(y_test_encoded, test_pred)
-        print(f"    📊 Accuracy on test data: {test_accuracy * 100:.2f}%")
+        print(f"     Accuracy on test data: {test_accuracy * 100:.2f}%")
 
         # --- 5. Save Artifacts ---
         print("\n--> Step 5: Saving model artifacts...")
         joblib.dump(model, MODEL_DIR / "random_forest_model.joblib")
         joblib.dump(label_encoder, MODEL_DIR / "label_encoder.joblib")
         joblib.dump(X_train.columns.tolist(), MODEL_DIR / "symptom_columns.joblib")
-        print(f"    ✅ Model, Encoder, and Columns saved successfully in '{MODEL_DIR}'")
+        print(f"     Model, Encoder, and Columns saved successfully in '{MODEL_DIR}'")
 
     except Exception as e:
         print(f"\n AN UNEXPECTED ERROR OCCURRED: {e}")

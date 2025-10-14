@@ -17,9 +17,9 @@ class PredictionModel:
             self.model = joblib.load(MODEL_DIR / "random_forest_model.joblib")
             self.encoder = joblib.load(MODEL_DIR / "label_encoder.joblib")
             self.columns = joblib.load(MODEL_DIR / "symptom_columns.joblib")
-            print("✅ Backend model, encoder, and columns loaded successfully.")
+            print(" Backend model, encoder, and columns loaded successfully.")
         except FileNotFoundError:
-            print("❌ Error: Model files not found. Please run `ml/train.py` first.")
+            print(" Error: Model files not found. Please run `ml/train.py` first.")
             self.model = None
 
     def predict(self, symptoms: list):
