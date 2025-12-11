@@ -159,7 +159,7 @@ Deploy
 
 Make sure to expose port 10000.
 
-#Project Structure
+# Project Structure
 MediBot/
 |
 ├── backend/
